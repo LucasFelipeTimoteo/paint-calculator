@@ -1,17 +1,20 @@
 import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import React from 'react';
+import WallsMeasurementsProvider from './contexts/WallsMeasurements';
 import Home from './pages/Home';
 import './styles/global/App.css';
 import { MUITheme } from './styles/global/MUITheme';
 
 function App() {
   return (
-    <div className="App">
-      <ThemeProvider theme={MUITheme}>
-        <CssBaseline />
-        <Home />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={MUITheme}>
+      <WallsMeasurementsProvider>
+        <div className="App">
+          <CssBaseline />
+          <Home />
+        </div>
+      </WallsMeasurementsProvider>
+    </ThemeProvider>
   );
 }
 
