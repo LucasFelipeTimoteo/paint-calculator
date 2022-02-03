@@ -1,9 +1,13 @@
 import React from 'react';
-import DoorsAndWindowsNumbers from './DoorsAndWindowsNumbers';
+import useWallsMeasurementsProvider from '../../../contexts/WallsMeasurements/providerHook/useWallsMeasurementsProvider';
+import useWallsAccessoriesErrors from '../../../hooks/calculator/wallsAccessories/errors/useWallsAccessoriesErrors';
+import useWallsMeasurementErrors from '../../../hooks/calculator/wallsMeasurementGroup/errors/useWallsMeasurementErrors';
+import CalculatorInputErrorMessage from '../CalculatorInputErrorMessage';
 import FormButtons from '../FormButtons';
-import WallsMeasurement from './WallsMeasurements';
+import DoorsAndWindowsNumbers from './DoorsAndWindowsNumbers';
 import useStyles from './styles';
 import { ICalculationFieldsProps } from './types';
+import WallsMeasurement from './WallsMeasurements';
 
 export default function CalculationFields({
   formStep,
@@ -11,6 +15,10 @@ export default function CalculationFields({
   handlePrevFormStep,
   handleNextFormStep
 }: ICalculationFieldsProps) {
+  const { wallsMeasurementsArea } = useWallsMeasurementsProvider()
+  const wallsAccessoriesErrorMessage = useWallsAccessoriesErrors(wallsMeasurementsArea)
+  const wallsMeasurementsErrorMessage = useWallsMeasurementErrors()
+
   const { formWrapper, inputFields } = useStyles()
 
   return (
@@ -22,6 +30,13 @@ export default function CalculationFields({
             slideAnimationDirection={slideAnimationDirection}
           />
         }
+        {
+          (wallsMeasurementsErrorMessage && formStep <= 1) && (
+            <CalculatorInputErrorMessage
+              errorMessage={wallsMeasurementsErrorMessage}
+            />
+          )
+        }
 
         {
           formStep === 2 &&
@@ -29,11 +44,20 @@ export default function CalculationFields({
             slideAnimationDirection={slideAnimationDirection}
           />
         }
+        {
+          (wallsAccessoriesErrorMessage && formStep === 2) && (
+            <CalculatorInputErrorMessage
+              errorMessage={wallsAccessoriesErrorMessage}
+            />
+          )
+        }
       </div>
 
       <FormButtons
         handlePrevFormStep={handlePrevFormStep}
         handleNextFormStep={handleNextFormStep}
+        wallsMeasurementsErrorMessage={wallsMeasurementsErrorMessage}
+        wallsAccessoriesErrorMessage={wallsAccessoriesErrorMessage}
         formStep={formStep}
       />
     </form>
