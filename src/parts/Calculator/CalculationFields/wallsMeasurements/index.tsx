@@ -2,7 +2,7 @@ import { Slide } from '@material-ui/core'
 import React from 'react'
 import { ISlideAnimationDirectionProp } from '../../../../hooks/useSlideAnimationDirection/types'
 import useCalculationFieldsStyles from '../styles'
-import FirstWallMeasurements from './FirstWallMeasurements'
+import FirstWallMeasurement from './FirstWallMeasurement'
 import FourthWallMeasurement from './FourthWallMeasurement'
 import SecondWallMeasurement from './SecondWallMeasurement'
 import useStyles from './styles'
@@ -18,7 +18,7 @@ export default function WallsMeasurements({
     <Slide in={true} direction={slideAnimationDirection} mountOnEnter unmountOnExit>
       <div className={inputFields}>
         <div className={wallInputGroup}>
-          <FirstWallMeasurements />
+          <FirstWallMeasurement />
         </div>
 
         <div className={wallInputGroup}>

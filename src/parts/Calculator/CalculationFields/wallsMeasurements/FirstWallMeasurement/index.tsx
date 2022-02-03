@@ -2,7 +2,7 @@ import { TextField } from '@material-ui/core'
 import React from 'react'
 import useWallsMeasurementsProvider from '../../../../../contexts/WallsMeasurements/providerHook/useWallsMeasurementsProvider'
 
-export default function FirstWallMeasurements() {
+export default function FirstWallMeasurement() {
   const {
     firstWallWidth,
     firstWallHeight,
