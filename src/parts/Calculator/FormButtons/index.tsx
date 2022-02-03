@@ -7,7 +7,9 @@ import { IFormButtonsProps } from './types'
 export default function FormButtons({
   handlePrevFormStep,
   handleNextFormStep,
-  formStep
+  formStep,
+  wallsMeasurementsErrorMessage,
+  wallsAccessoriesErrorMessage
 }: IFormButtonsProps) {
   const { calculatorButtonsGroup } = useCalculatorStyles()
 
@@ -20,7 +22,12 @@ export default function FormButtons({
 
       {
         formStep < 3 &&
-        <NextButton handleNextFormStep={handleNextFormStep} />
+        <NextButton
+          formStep={formStep}
+          handleNextFormStep={handleNextFormStep}
+          wallsMeasurementsErrorMessage={wallsMeasurementsErrorMessage}
+          wallsAccessoriesErrorMessage={wallsAccessoriesErrorMessage}
+        />
       }
     </div>
   )
