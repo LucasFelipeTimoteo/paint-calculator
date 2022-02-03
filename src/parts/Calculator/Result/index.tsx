@@ -1,6 +1,6 @@
 import React from 'react';
 import ResultButtons from '../ResultButtons';
-import ResultInfo from '../ResultInfo';
+import ResultInfo from './ResultInfo';
 import { IResultProps } from './types';
 
 export default function Result({
