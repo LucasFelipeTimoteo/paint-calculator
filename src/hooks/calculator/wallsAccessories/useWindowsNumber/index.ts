@@ -19,7 +19,7 @@ const useWindowsNumber = () => {
   }
 
   const handleResetWindowsNumber = () => {
-    setWindowsNumber('')
+    setWindowsNumber('0')
   }
 
   return {

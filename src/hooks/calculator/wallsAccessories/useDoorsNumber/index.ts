@@ -19,7 +19,7 @@ const useDoorsNumber = () => {
   }
 
   const handleResetDoorsNumber = () => {
-    setDoorsNumber('')
+    setDoorsNumber('0')
   }
 
   return {

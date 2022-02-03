@@ -1,8 +1,9 @@
 import getStoragePath from "../../../utils/getStoragePath"
 import { storagePathOptions } from "../../../utils/setLocalStorageData/types"
+import getDefaultStorageValue from "./utils/getDefaultStorageValue"
 
 const calculatorStorageData = (storagePath: storagePathOptions) => {
-  let defaultStorageValue = ''
+  let defaultStorageValue = getDefaultStorageValue(storagePath)
 
   const storagePathValue = getStoragePath(storagePath)
   const storageValue = window.localStorage.getItem(storagePathValue)
