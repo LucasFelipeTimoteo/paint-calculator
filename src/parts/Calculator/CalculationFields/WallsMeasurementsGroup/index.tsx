@@ -8,7 +8,8 @@ import SecondWallMeasurement from './SecondWallMeasurement'
 import useStyles from './styles'
 import ThirdWallMeasurement from './ThirdWallMeasurement'
 
-export default function WallsMeasurements({
+
+export default function WallsMeasurementsGroup({
   slideAnimationDirection
 }: ISlideAnimationDirectionProp) {
   const { wallInputGroup } = useStyles()

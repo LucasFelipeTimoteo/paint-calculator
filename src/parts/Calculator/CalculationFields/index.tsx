@@ -7,7 +7,7 @@ import FormButtons from '../FormButtons';
 import DoorsAndWindowsNumbers from './DoorsAndWindowsNumbers';
 import useStyles from './styles';
 import { ICalculationFieldsProps } from './types';
-import WallsMeasurement from './WallsMeasurements';
+import WallsMeasurementsGroup from './WallsMeasurementsGroup';
 
 export default function CalculationFields({
   formStep,
@@ -26,7 +26,7 @@ export default function CalculationFields({
       <div className={inputFields}>
         {
           formStep <= 1 &&
-          <WallsMeasurement
+          <WallsMeasurementsGroup
             slideAnimationDirection={slideAnimationDirection}
           />
         }
