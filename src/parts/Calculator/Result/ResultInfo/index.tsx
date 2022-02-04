@@ -1,47 +1,32 @@
-import { Typography } from '@material-ui/core'
-import { FormatPaint } from '@material-ui/icons'
 import React from 'react'
+import useWallsAccessoriesProvider from '../../../../contexts/WallsAccessories/providerHooks'
+import useWallsMeasurementsProvider from '../../../../contexts/WallsMeasurements/providerHook/useWallsMeasurementsProvider'
+import ResultInfoHeader from './ResultInfoHeader'
+import ResultInfoRecommendation from './ResultInfoRecommendation'
 import useStyles from './styles'
+import calculateTotalPaintNeeded from './utils/calculateTotalPaintNeeded'
+import calculateWallsPaintableArea from './utils/calculateWallsPaintableArea'
+import filterRecommendationList from './utils/filterRecommendations'
 
 export default function ResultInfo() {
-  const { resultWrapper, canListWrapper, canListListItem } = useStyles()
+  const { wallsMeasurementsArea } = useWallsMeasurementsProvider()
+  const { windowsNumber, doorsNumber } = useWallsAccessoriesProvider()
+
+  const wallsTotalPaintableArea = calculateWallsPaintableArea(
+    wallsMeasurementsArea,
+    Number(windowsNumber),
+    Number(doorsNumber)
+  )
+
+  const totalPaintNeeded = calculateTotalPaintNeeded(wallsTotalPaintableArea)
+  const paintCansRecommendation = filterRecommendationList(totalPaintNeeded)
+
+  const { resultWrapper } = useStyles()
 
   return (
     <div className={resultWrapper}>
-      <Typography variant='h3' component='p'>
-        You will need 200L of paint!
-      </Typography>
-
-      <Typography variant='h5' component='p'>
-        The best cans choice is:
-      </Typography>
-
-      <ul className={canListWrapper}>
-        <li className={canListListItem}>
-          <FormatPaint />
-          <Typography variant='h5' component='p'>
-            18L can: 3
-          </Typography>
-        </li>
-        <li className={canListListItem}>
-          <FormatPaint />
-          <Typography variant='h5' component='p'>
-            18L can: 3
-          </Typography>
-        </li>
-        <li className={canListListItem}>
-          <FormatPaint />
-          <Typography variant='h5' component='p'>
-            18L can: 3
-          </Typography>
-        </li>
-        <li className={canListListItem}>
-          <FormatPaint />
-          <Typography variant='h5' component='p'>
-            18L can: 3
-          </Typography>
-        </li>
-      </ul>
+      <ResultInfoHeader totalPaintNeeded={totalPaintNeeded} />
+      <ResultInfoRecommendation paintCansRecommendation={paintCansRecommendation}/>
     </div>
   )
 }

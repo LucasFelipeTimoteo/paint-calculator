@@ -1,0 +1,1 @@
+export const defaultSquareMeterPerPaintLiter = 5
