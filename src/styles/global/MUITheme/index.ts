@@ -13,12 +13,12 @@ let theme = createTheme({
 
   typography: {
     h1: {
-      fontSize: '3.5rem',
+      fontSize: '3.1rem',
       whiteSpace: 'nowrap'
     },
 
     h2: {
-      fontSize: '1.5rem',
+      fontSize: '1.4rem',
       marginLeft: 1
     }
   },
