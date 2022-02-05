@@ -1,6 +1,6 @@
-import getPaintCanAmount from "./utils/getPaintCanAmount";
 import extraPaintCan from "./utils/extraPaintCan";
-import getLitersremainderPerCurrentCan from "./utils/getLitersRemainderPerCurrentCan";
+import getLitersremainderPerCurrentCan from "./utils/getLitersremainderPerCurrentCan";
+import getPaintCanAmount from "./utils/getPaintCanAmount";
 import parseDivisionRemainderBase from "./utils/parseDivisionRemainderBase";
 import { PaintCans } from "./utils/types/PaintCans";
 
