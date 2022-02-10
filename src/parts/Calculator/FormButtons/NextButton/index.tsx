@@ -29,6 +29,7 @@ export default function NextButton({
       color='primary'
       title='Click to go to next step of calculation'
       disabled={isDisabled}
+      data-testid='nextStepButton'
       {
       ...(isWallsMeasurementsValid || isWallsAccessoriesValid) &&
       { onClick: handleNextFormStep }

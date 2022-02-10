@@ -18,6 +18,7 @@ export default function FirstWallMeasurement() {
         title="Type the width number of the first wall"
         onChange={handleFirstWallWidth}
         value={firstWallWidth}
+        inputProps={{'data-testid': 'wallMeasurementsInput'}}
       />
       <TextField
         variant='filled'
@@ -25,6 +26,7 @@ export default function FirstWallMeasurement() {
         title="Type the height number of the first wall"
         onChange={handleFirstWallHeight}
         value={firstWallHeight}
+        inputProps={{'data-testid': 'wallMeasurementsInput'}}
       />
     </>
   )

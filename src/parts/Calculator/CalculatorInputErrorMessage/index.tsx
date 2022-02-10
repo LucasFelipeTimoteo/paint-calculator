@@ -9,7 +9,11 @@ export default function CalculatorInputErrorMessage({
   const { errorMessageText } = useStyles()
 
   return (
-    <Typography className={errorMessageText} variant='body2'>
+    <Typography
+      className={errorMessageText}
+      variant='body2'
+      data-testid='inputErrorMessage'
+    >
       {errorMessage}
     </Typography>
   );

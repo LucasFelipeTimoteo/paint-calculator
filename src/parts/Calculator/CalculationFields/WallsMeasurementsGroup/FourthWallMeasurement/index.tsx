@@ -18,6 +18,7 @@ export default function FourthWallMeasurement() {
         title="Type the width number of the fourth wall"
         onChange={handleFourthWallWidth}
         value={fourthWallWidth}
+        inputProps={{'data-testid': 'wallMeasurementsInput'}}
       />
       <TextField
         variant='filled'
@@ -25,6 +26,7 @@ export default function FourthWallMeasurement() {
         title="Type the height number of the fourth wall"
         onChange={handleFourthWallHeight}
         value={fourthWallHeight}
+        inputProps={{'data-testid': 'wallMeasurementsInput'}}
       />
     </>
   )
