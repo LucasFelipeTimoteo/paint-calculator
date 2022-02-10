@@ -45,6 +45,7 @@ export default function ResetButton({ handleResetFormStep }: IResetButton) {
       startIcon={<RotateLeftIcon />}
       color='primary'
       onClick={handleResetButtonClick}
+      data-testid='resetButton'
     >
       reset
     </Button>

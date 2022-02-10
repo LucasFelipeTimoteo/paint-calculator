@@ -10,6 +10,7 @@ export default function ResultInfoHeader({
       variant='h3'
       component='p'
       title={`You will need ${totalPaintNeeded} of paint liters`}
+      data-testid='resultInfoHeader'
     >
       {`You will need ${totalPaintNeeded}L of paint!`}
     </Typography>

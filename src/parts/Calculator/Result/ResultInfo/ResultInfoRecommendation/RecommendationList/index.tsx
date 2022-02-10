@@ -19,6 +19,7 @@ export default function RecommendationList({
             title={
               `You will need ${paintCan.amount} paint cans(s) of ${paintCan.liters} liters`
             }
+            data-testid="recommendedPaintCan"
           >
             <FormatPaint />
             <Typography variant='h5' component='p'>

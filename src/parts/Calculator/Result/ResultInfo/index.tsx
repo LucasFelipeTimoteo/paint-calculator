@@ -24,7 +24,7 @@ export default function ResultInfo() {
   const { resultWrapper } = useStyles()
 
   return (
-    <div className={resultWrapper}>
+    <div className={resultWrapper} data-testid='resultInfo'>
       <ResultInfoHeader totalPaintNeeded={totalPaintNeeded} />
       <ResultInfoRecommendation paintCansRecommendation={paintCansRecommendation}/>
     </div>

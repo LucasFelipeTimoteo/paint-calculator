@@ -16,7 +16,13 @@ export default function WallsMeasurementsGroup({
   const { inputFields } = useCalculationFieldsStyles()
 
   return (
-    <Slide in={true} direction={slideAnimationDirection} mountOnEnter unmountOnExit>
+    <Slide
+      in={true}
+      direction={slideAnimationDirection}
+      mountOnEnter
+      unmountOnExit
+      data-testid="wallsMeasurementsGroup"
+    >
       <div className={inputFields}>
         <div className={wallInputGroup}>
           <FirstWallMeasurement />
