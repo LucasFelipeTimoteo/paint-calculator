@@ -14,7 +14,7 @@ export default function PrevButton({
       color='secondary'
       title='Click to go to prev step of calculation'
       onClick={handlePrevFormStep}
-      data-testid="prevButton"
+      data-testid='prevButton'
     >
       prev
     </Button>

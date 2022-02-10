@@ -11,7 +11,13 @@ export default function DoorsAndWindowsNumbers({
 
   const { inputFields } = useCalculationFieldsStyles()
   return (
-    <Slide in={true} direction={slideAnimationDirection} mountOnEnter unmountOnExit>
+    <Slide
+      in={true}
+      direction={slideAnimationDirection}
+      mountOnEnter
+      unmountOnExit
+      data-testid='doorsAndWindowsNumbers'
+    >
       <div className={inputFields}>
         <DoorsNumber />
         <WindowsNumber />

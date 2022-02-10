@@ -12,6 +12,7 @@ export default function WindowsNumber() {
       title='Type the total number of windows'
       onChange={handleWindowsNumber}
       value={windowsNumber}
+      inputProps={{'data-testid': 'windowsNumber'}}
     />
   )
 }

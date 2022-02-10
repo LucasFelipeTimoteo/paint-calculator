@@ -12,6 +12,7 @@ export default function DoorsNumber() {
       title='Type the total number of doors'
       onChange={handleDoorsNumber}
       value={doorsNumber}
+      inputProps={{ 'data-testid': 'doorsNumber' }}
     />
   )
 }
