@@ -1,4 +1,6 @@
 import React from 'react'
+import WallsAccessoriesProvider from '../../contexts/WallsAccessories'
+import WallsMeasurementsProvider from '../../contexts/WallsMeasurements'
 import useFormStep from '../../hooks/calculator/useFormStep'
 import useSlideAnimationDirection from '../../hooks/useSlideAnimationDirection'
 import CalculationFields from '../../parts/Calculator/CalculationFields'
@@ -29,29 +31,34 @@ export default function Calculator() {
   } = useStyles()
 
   return (
-    <section className={calculatorWrapper} id="calculator">
-      <CalculatorSVGBackground />
+    <WallsAccessoriesProvider>
+      <WallsMeasurementsProvider>
+        <section className={calculatorWrapper} id="calculator">
+          <CalculatorSVGBackground />
 
-      <FormStepper formStep={formStep} />
-      {
-        formStep === 3
-          ?
-          (
-            <Result
-              handlePrevFormStep={handlePrevFormStep}
-              handleResetFormStep={handleResetFormStep}
-            />
-          )
-          :
-          (
-            <CalculationFields
-              formStep={formStep}
-              slideAnimationDirection={slideAnimationDirection}
-              handleNextFormStep={handleNextFormStep}
-              handlePrevFormStep={handlePrevFormStep}
-            />
-          )
-      }
-    </section>
+          <FormStepper formStep={formStep} />
+          {
+            formStep === 3
+              ?
+              (
+                <Result
+                  handlePrevFormStep={handlePrevFormStep}
+                  handleResetFormStep={handleResetFormStep}
+                />
+              )
+              :
+              (
+                <CalculationFields
+                  formStep={formStep}
+                  slideAnimationDirection={slideAnimationDirection}
+                  handleNextFormStep={handleNextFormStep}
+                  handlePrevFormStep={handlePrevFormStep}
+                />
+              )
+          }
+        </section>
+      </WallsMeasurementsProvider >
+    </WallsAccessoriesProvider>
+
   )
 }
