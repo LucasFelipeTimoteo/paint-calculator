@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import useWallsMeasurementsProvider from "../../../../../contexts/WallsMeasurements/providerHook/useWallsMeasurementsProvider"
 import { WallsMeasurementsSchema } from "../../../../../schemas/WallsMeasurements"
-import parseCamelCaseString from "../../../../utils/parseCammelCaseString"
+import parseErrorMessage from "../../../utils/parseErrorMessage"
 import { ICalculatorInputsErrorMessages } from "../../../utils/types/CalculatorInputsErrorMessages"
 
 const useWallsMeasurementsErrors = () => {
@@ -49,11 +49,8 @@ const useWallsMeasurementsErrors = () => {
         if (!(error instanceof Error)) {
           handleWallsMeasurementsErrorMessage('Incorrect value found')
         } else {
-          const errorMessage = parseCamelCaseString(error.message);
-          const match = errorMessage.match(/^.*?`number`/);
-          const parsedMatch = match && parseCamelCaseString(match[0])
-          const parsedErrorMessage = match ? parsedMatch : errorMessage
-
+          const parsedErrorMessage = parseErrorMessage(error)
+          
           handleWallsMeasurementsErrorMessage(parsedErrorMessage)
         }
       }
