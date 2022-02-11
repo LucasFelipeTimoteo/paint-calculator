@@ -58,5 +58,37 @@ describe('Should return if is necessary to have a extra paint can to compliment 
 
       expect(value).toBe(expected)
     })
+
+    it('Should return false to 0.5 liters remainder, current paint can liters is 0.5 and the smallest paint can have 0.5 liters', () => {
+      const currentPaintCan = { amount: 0, liters: 0.5 }
+      const value = extraPaintCan(paintCansMock, currentPaintCan, 0.5)
+      const expected = false
+
+      expect(value).toBe(expected)
+    })
+
+    it('Should return false to 0.6 liters remainder, current paint can liters is 0.5 and the smallest paint can have 0.5 liters', () => {
+      const currentPaintCan = { amount: 0, liters: 0.5 }
+      const value = extraPaintCan(paintCansMock, currentPaintCan, 0.6)
+      const expected = false
+
+      expect(value).toBe(expected)
+    })
+
+    it('Should return false to 1 liters remainder, current paint can liters is 0.5 and the smallest paint can have 0.5 liters', () => {
+      const currentPaintCan = { amount: 0, liters: 0.5 }
+      const value = extraPaintCan(paintCansMock, currentPaintCan, 1)
+      const expected = false
+
+      expect(value).toBe(expected)
+    })
+
+    it('Should return false to 1.5 liters remainder, current paint can liters is 0.5 and the smallest paint can have 0.5 liters', () => {
+      const currentPaintCan = { amount: 0, liters: 0.5 }
+      const value = extraPaintCan(paintCansMock, currentPaintCan, 1.5)
+      const expected = false
+
+      expect(value).toBe(expected)
+    })
   })
 })
