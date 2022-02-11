@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   stepper: {
     width: '100%',
     maxWidth: 600,
-    margin: '150px 0 10px',
+    margin: '21.5vh 0 3px',
     padding: '24px 2px 24px',
     background: 'transparent'
   }
