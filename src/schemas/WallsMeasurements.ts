@@ -1,4 +1,7 @@
 import * as yup from 'yup'
+import { defaultDoorMeasurements } from '../utils/calculatorDefaults/windowsAndDoorsDefaultMeasurements'
+
+const wallsMinHeight = Number((defaultDoorMeasurements[1] + 0.30).toFixed(1))
 
 const yupDefaultWallWidthValidator = yup
   .number()
@@ -9,7 +12,7 @@ const yupDefaultWallWidthValidator = yup
 
 const yupDefaultWallHeightValidator = yup
   .number()
-  .min(2.2)
+  .min(wallsMinHeight)
   .max(15)
   .required()
   .notOneOf([0])
