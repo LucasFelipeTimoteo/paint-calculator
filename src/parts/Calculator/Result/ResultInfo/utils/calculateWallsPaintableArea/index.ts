@@ -1,7 +1,7 @@
 import { defaultDoorMeasurements, defaultWindowMeasurements } from '../../../../../../utils/calculatorDefaults/windowsAndDoorsDefaultMeasurements'
 
 const calculateWallsPaintableArea = (
-  walllsTotalArea: number,
+  wallsTotalArea: number,
   windowsNumber: number,
   doorsNumber: number
 ) => {
@@ -12,7 +12,7 @@ const calculateWallsPaintableArea = (
   const doorsTotalArea = singleDoorArea * doorsNumber
 
   const wallsTotalNonPaintableArea = windowsTotalArea + doorsTotalArea
-  const wallsTotalPaintableArea = walllsTotalArea - wallsTotalNonPaintableArea
+  const wallsTotalPaintableArea = wallsTotalArea - wallsTotalNonPaintableArea
 
   return wallsTotalPaintableArea
 }
