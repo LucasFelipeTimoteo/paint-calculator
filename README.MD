@@ -42,7 +42,7 @@
 - Calculate total area of 4 walls
 - Calculate how many windows and doors the walls will have
 - Get total paint liters you need to paint the walls
-- Get recommendation of pain cans to buy to maximize your savings
+- Get recommendation of paint cans to buy to maximize your savings
 
 ## 🛠️ Installation Steps
 
